@@ -2,6 +2,7 @@
   background-color: #f0ede8;
 
   &-content {
+    width: 100%;
     max-height: 5rem;
     display: flex;
     flex-direction: row;
@@ -13,10 +14,8 @@
 
   &-left {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 6rem;
-    flex-wrap: nowrap;
+    gap: 2rem;
   }
 
   &__menu {
@@ -33,22 +32,34 @@
     }
   }
 
-  &__filters {
+  &__filters,
+  .header__contacts {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   &__contacts {
-    display: flex;
-    flex-direction: row;
-    gap: 1.875rem;
-    padding-right: 7.5rem;
+    padding-right: 2.6rem;
   }
 }
 
 .header__filters-text,
 .header__contacts-text {
+  white-space: nowrap;
+}
+
+.header__filters-img,
+.header__contacts-img {
+  width: 1.2rem;
+  height: auto;
+}
+
+.header__filters-text,
+.header__contacts-text {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  margin: 0;
   white-space: nowrap;
 }
 

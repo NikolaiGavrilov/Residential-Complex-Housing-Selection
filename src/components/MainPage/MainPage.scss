@@ -8,8 +8,8 @@
   background-size: cover;
   min-width: 100vw;
   min-height: 100vh;
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   padding-top: 57px;
   overflow: hidden;
 }
@@ -80,6 +80,128 @@
   pointer-events: none;
 }
 
+.highlight {
+  &__penthouses_view1 {
+    position: absolute;
+    top: 15px;
+    left: 331px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__penthouses_view2 {
+    position: absolute;
+    top: 5px;
+    left: 210px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__flats_view1 {
+    position: absolute;
+    top: 195px;
+    left: 351px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__flats_view2 {
+    position: absolute;
+    top: 183px;
+    left: 233px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses1_view1 {
+    position: absolute;
+    top: 420px;
+    left: 489px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses2_view1 {
+    position: absolute;
+    top: 345px;
+    right: 333px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses_view2 {
+    position: absolute;
+    top: 340px;
+    right: 125px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__villas_view1 {
+    position: absolute;
+    top: 233px;
+    left: 233px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__villas_view2 {
+    position: absolute;
+    top: 290px;
+    left: 50px;
+    z-index: 3;
+    pointer-events: none;
+  }
+}
+
+.hover-highlight {
+  z-index: 111;
+  display: none;
+  position: absolute;
+  pointer-events: all;
+
+  &__penthouses_view1 {
+    opacity: 1;
+    top: 15px;
+    left: 331px;
+  }
+
+  &__penthouses_view2 {
+    top: 5px;
+    left: 210px;
+  }
+
+  &__flats_level3_view1 {
+    top: 195px;
+    left: 351px;
+  }
+
+  &__flats_level4_view1 {
+    top: 195px;
+    left: 351px;
+  }
+
+  &__flats_level5_view1 {
+    top: 195px;
+    left: 351px;
+  }
+
+  &__flats_level3_view2 {
+    top: 183px;
+    left: 233px;
+  }
+
+  &__flats_level4_view2 {
+    top: 183px;
+    left: 233px;
+  }
+
+  &__flats_level5_view2 {
+    top: 183px;
+    left: 233px;
+  }
+}
+
 .building-img-back_view2 {
   position: absolute;
   top: 0;
@@ -142,42 +264,3 @@
   pointer-events: auto;
 }
 
-.navigation {
-  position: absolute;
-  left: 0px;
-  top: 29%;
-  width: 207px;
-  display: flex;
-  flex-direction: column;
-  z-index: 5;
-  border-radius: 0 20px 20px 0;
-  background-color: #ffffff;
-  overflow: hidden;
-
-  &__items {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__item {
-    padding: 10px 20px;
-    font-family: Galatea;
-    font-size: 15px;
-    color: #000000;
-    text-align: left;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #ad8361;
-      color: white;
-    }
-
-    &:not(:first-child) {
-      border-bottom: 1px solid rgba(173, 131, 97, 0.15);
-    }
-
-    &:active {
-      border: 1px solid white;
-    }
-  }
-}
