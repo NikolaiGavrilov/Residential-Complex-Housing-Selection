@@ -80,125 +80,130 @@
   pointer-events: none;
 }
 
-.highlight {
-  &__penthouses_view1 {
-    position: absolute;
-    top: 15px;
-    left: 331px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__penthouses_view2 {
-    position: absolute;
-    top: 5px;
-    left: 210px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__flats_view1 {
-    position: absolute;
-    top: 195px;
-    left: 351px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__flats_view2 {
-    position: absolute;
-    top: 183px;
-    left: 233px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__cityhouses1_view1 {
-    position: absolute;
-    top: 420px;
-    left: 489px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__cityhouses2_view1 {
-    position: absolute;
-    top: 345px;
-    right: 333px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__cityhouses_view2 {
-    position: absolute;
-    top: 340px;
-    right: 125px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__villas_view1 {
-    position: absolute;
-    top: 233px;
-    left: 233px;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &__villas_view2 {
-    position: absolute;
-    top: 290px;
-    left: 50px;
-    z-index: 3;
-    pointer-events: none;
-  }
-}
-
 .hover-highlight {
-  z-index: 111;
-  display: none;
-  position: absolute;
-  pointer-events: all;
-
   &__penthouses_view1 {
-    opacity: 1;
+    pointer-events: all;
+    z-index: 6;
+    position: absolute;
+    display: block;
+    opacity: 0;
     top: 15px;
     left: 331px;
-  }
-
-  &__penthouses_view2 {
-    top: 5px;
-    left: 210px;
   }
 
   &__flats_level3_view1 {
-    top: 195px;
-    left: 351px;
+    scale: 98%;
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 310px;
+    left: 360px;
   }
 
   &__flats_level4_view1 {
-    top: 195px;
-    left: 351px;
+    scale: 100%;
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 255px;
+    left: 360px;
   }
 
   &__flats_level5_view1 {
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
     top: 195px;
-    left: 351px;
+    left: 350px;
+  }
+
+  &__cityhouses1_view1 {
+    pointer-events: all;
+    z-index: 4;
+    position: absolute;
+    display: block;
+    top: 420px;
+    left: 489px;
+  }
+
+  &__cityhouses2_view1 {
+    pointer-events: all;
+    z-index: 4;
+    position: absolute;
+    display: block;
+    top: 345px;
+    right: 333px;
+  }
+
+  &__villas_view1 {
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 233px;
+    left: 233px;
+  }
+
+  &__penthouses_view2 {
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 5px;
+    left: 210px;
   }
 
   &__flats_level3_view2 {
-    top: 183px;
+    opacity: 1;
+    scale: 98%;
+    rotate: (-0.5deg);
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 293px;
     left: 233px;
   }
 
   &__flats_level4_view2 {
-    top: 183px;
-    left: 233px;
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 228px;
+    left: 235px;
   }
 
   &__flats_level5_view2 {
-    top: 183px;
-    left: 233px;
+    scale: 98%;
+    rotate: (1deg);
+    pointer-events: all;
+    z-index: 6;
+    position: absolute;
+    display: block;
+    top: 172px;
+    left: 223px;
+  }
+
+  &__cityhouses_view2 {
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 340px;
+    right: 125px;
+  }
+
+  &__villas_view2 {
+    pointer-events: all;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    top: 290px;
+    left: 50px;
   }
 }
 
@@ -263,4 +268,3 @@
   cursor: pointer;
   pointer-events: auto;
 }
-

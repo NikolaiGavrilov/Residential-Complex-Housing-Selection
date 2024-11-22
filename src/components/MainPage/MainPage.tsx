@@ -4,25 +4,36 @@ import Header from "../Header/Header";
 import "./MainPage.scss";
 import { setTitle } from "../../redux/headerTitleReducer";
 import Navigation from "../Navigation/Navigation";
+import NavigationHighlights from "../NavigationHighlights/NavigationHighlights";
 
 const MainPage = () => {
   const [buildingView, setBuildingView] = useState<1 | 2>(1);
   const [showNavigationHighlightBuilding, setShowNavigationHighlightBuilding] =
     useState(false);
   const [selectedTitle, setSelectedTitle] = useState<string>("Пентхаусы");
-  const [hoverHighlights, setHoverHighlights] = useState<{
-    [key: string]: boolean;
-  }>({
-    penthouses: false,
-    flats_level3: false,
-    flats_level4: false,
-    flats_level5: false,
-  });
 
   const dispatch = useDispatch();
 
   const handleChangeView = () => {
     buildingView === 1 ? setBuildingView(2) : setBuildingView(1);
+  };
+
+  const [hoverHighlights, setHoverHighlights] = useState<{
+    [key: string]: number;
+  }>({
+    penthouses: 0,
+    flats_level3: 0,
+    flats_level4: 0,
+    flats_level5: 0,
+    cityhouses: 0,
+    villas: 0,
+  });
+
+  const handleVisibilityOnHover = (highlight: string) => () => {
+    setHoverHighlights((prev) => ({
+      ...prev,
+      [highlight]: prev[highlight] === 0 ? 1 : 0,
+    }));
   };
 
   const handleNavigationClick = (title: string) => {
@@ -35,15 +46,11 @@ const MainPage = () => {
     }, 3000);
   };
 
-  const handleHover = (highlight: string) => () => {
-    setHoverHighlights((prev) => ({ ...prev, [highlight]: !prev[highlight] }));
-  };
-
   return (
     <>
       <Header />
       <section className="main-page">
-      <Navigation onNavigationClick={handleNavigationClick} />
+        <Navigation onNavigationClick={handleNavigationClick} />
         <div className={`img-box_view${buildingView}`}>
           <img
             className={`building-img-back_view${buildingView}`}
@@ -56,85 +63,163 @@ const MainPage = () => {
             src={`building_view${buildingView}.svg`}
             alt={`здание вид${buildingView}`}
           />
-          {buildingView === 1 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Пентхаусы" && (
+          <NavigationHighlights
+            showNavigationHighlightBuilding={showNavigationHighlightBuilding}
+            selectedTitle={selectedTitle}
+            buildingView={buildingView}
+          />
+          {buildingView === 1 && (
+            <>
               <img
-                className="highlight__penthouses_view1"
+                className="hover-highlight__penthouses_view1"
                 src="penthouses_view1.svg"
-                alt="подсветка петхаусов вид1"
+                alt="Пентхаусы"
+                style={{
+                  opacity: hoverHighlights.penthouses,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("penthouses")}
+                onMouseLeave={handleVisibilityOnHover("penthouses")}
               />
-            )}
-          {buildingView === 2 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Пентхаусы" && (
               <img
-                className="highlight__penthouses_view2"
-                src="penthouses_view2.svg"
-                alt="подсветка петхаусов вид2"
+                className="hover-highlight__flats_level3_view1"
+                src="flats_onelevel_view1.svg"
+                alt="Квартиры этаж 3"
+                style={{
+                  opacity: hoverHighlights.flats_level3,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level3")}
+                onMouseLeave={handleVisibilityOnHover("flats_level3")}
               />
-            )}
-          {buildingView === 1 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Квартиры" && (
               <img
-                className="highlight__flats_view1"
-                src="flats_view1.svg"
-                alt="подсветка квартир вид1"
+                className="hover-highlight__flats_level4_view1"
+                src="flats_onelevel_view1.svg"
+                alt="Квартиры этаж 4"
+                style={{
+                  opacity: hoverHighlights.flats_level4,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level4")}
+                onMouseLeave={handleVisibilityOnHover("flats_level4")}
               />
-            )}
-          {buildingView === 2 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Квартиры" && (
               <img
-                className="highlight__flats_view2"
-                src="flats_view2.svg"
-                alt="подсветка квартир вид2"
+                className="hover-highlight__flats_level5_view1"
+                src="flats_level5_view1.png"
+                alt="Квартиры этаж 5"
+                style={{
+                  opacity: hoverHighlights.flats_level5,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level5")}
+                onMouseLeave={handleVisibilityOnHover("flats_level5")}
               />
-            )}
-          {buildingView === 1 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Ситихаусы" && (
-              <>
-                <img
-                  className="highlight__cityhouses1_view1"
-                  src="cityhouses1_view1.svg"
-                  alt="подсветка ситихаусов вид1"
-                />
-                <img
-                  className="highlight__cityhouses2_view1"
-                  src="cityhouses2_view1.svg"
-                  alt="подсветка ситихаусов вид1"
-                />
-              </>
-            )}
-          {buildingView === 2 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Ситихаусы" && (
               <img
-                className="highlight__cityhouses_view2"
-                src="cityhouses_view2.svg"
-                alt="подсветка ситихаусов вид2"
+                className="hover-highlight__cityhouses1_view1"
+                src="cityhouses1_view1.svg"
+                alt="Виллы"
+                style={{
+                  opacity: hoverHighlights.cityhouses,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("cityhouses")}
+                onMouseLeave={handleVisibilityOnHover("cityhouses")}
               />
-            )}
-          {buildingView === 1 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Виллы" && (
               <img
-                className="highlight__villas_view1"
+                className="hover-highlight__cityhouses2_view1"
+                src="cityhouses2_view1.svg"
+                alt="Виллы"
+                style={{
+                  opacity: hoverHighlights.cityhouses,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("cityhouses")}
+                onMouseLeave={handleVisibilityOnHover("cityhouses")}
+              />
+              <img
+                className="hover-highlight__villas_view1"
                 src="villas_view1.svg"
-                alt="подсветка вилл вид1"
+                alt="Виллы"
+                style={{
+                  opacity: hoverHighlights.villas,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("villas")}
+                onMouseLeave={handleVisibilityOnHover("villas")}
               />
-            )}
-          {buildingView === 2 &&
-            showNavigationHighlightBuilding &&
-            selectedTitle === "Виллы" && (
+            </>
+          )}
+          {buildingView === 2 && (
+            <>
               <img
-                className="highlight__villas_view2"
-                src="villas_view2.svg"
-                alt="подсветка вилл вид2"
+                className="hover-highlight__penthouses_view2"
+                src="penthouses_view2.svg"
+                alt="Пентхаусы"
+                style={{
+                  opacity: hoverHighlights.penthouses,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("penthouses")}
+                onMouseLeave={handleVisibilityOnHover("penthouses")}
               />
-            )}
+              <img
+                className="hover-highlight__flats_level3_view2"
+                src="flats_onelevel_view2.svg"
+                alt="Квартиры этаж 3"
+                style={{
+                  opacity: hoverHighlights.flats_level3,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level3")}
+                onMouseLeave={handleVisibilityOnHover("flats_level3")}
+              />
+              <img
+                className="hover-highlight__flats_level4_view2"
+                src="flats_onelevel_view2.svg"
+                alt="Квартиры этаж 4"
+                style={{
+                  opacity: hoverHighlights.flats_level4,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level4")}
+                onMouseLeave={handleVisibilityOnHover("flats_level4")}
+              />
+              <img
+                className="hover-highlight__flats_level5_view2"
+                src="flats_onelevel_view2.svg"
+                alt="Квартиры этаж 5"
+                style={{
+                  opacity: hoverHighlights.flats_level5,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("flats_level5")}
+                onMouseLeave={handleVisibilityOnHover("flats_level5")}
+              />
+              <img
+                className="hover-highlight__cityhouses_view2"
+                src="cityhouses_view2.svg"
+                alt="Виллы"
+                style={{
+                  opacity: hoverHighlights.cityhouses,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("cityhouses")}
+                onMouseLeave={handleVisibilityOnHover("cityhouses")}
+              />
+
+              <img
+                className="hover-highlight__villas_view2"
+                src="villas_view2.svg"
+                alt="Виллы"
+                style={{
+                  opacity: hoverHighlights.villas,
+                  transition: "opacity 0.7s ease",
+                }}
+                onMouseEnter={handleVisibilityOnHover("villas")}
+                onMouseLeave={handleVisibilityOnHover("villas")}
+              />
+            </>
+          )}
           <div className={`compass_view${buildingView}`}>
             <img src={`compass_view${buildingView}.svg`} alt="" />
           </div>
