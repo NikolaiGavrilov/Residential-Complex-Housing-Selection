@@ -1,10 +1,12 @@
-import "./Header.scss";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import './Header.scss';
 
-interface HeaderProps {
-  title: string;
-}
+interface HeaderProps {} 
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = () => {
+  const title = useSelector((state: RootState) => state.headerTitle.headerTitle); 
   return (
     <header className="header">
       <div className="header-content">
