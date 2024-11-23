@@ -70,7 +70,7 @@ const NavigationHighlights: React.FC<NavigationHighlightsProps> = ({
 
 export default NavigationHighlights;
 
-//Старая и более корявая версия подсветки, на всякий случай пусть будет сохранена
+//Старая неоптимизированная версия подсветки через клики по навигации, на всякий случай пусть будет сохранена
 //Old version of highlighting provided by navigation clicks. Let it be here to be on the safe side 
 {/* {buildingView === 1 &&
             showNavigationHighlightBuilding &&

@@ -1,0 +1,66 @@
+.bubble {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  max-width: 275px;
+  height: 326px;
+  background-color: white;
+  box-shadow: 0px 0px 7px 0px #4f341d1f;
+  border-radius: 20px;
+  padding: 30px 40px;
+
+  &__heading {
+    margin: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-family: BreweryNo2W06-Light;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 32.68px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ad8361;
+    border-bottom: 1px solid #000000;
+  }
+
+  &__body {
+    font-family: Galatea;
+    font-size: 16px;
+    font-weight: 270;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+  }
+
+  &__big-text {
+    display: inline-block;
+    font-family: Galatea;
+    font-size: 30px;
+    font-weight: 270;
+    line-height: 35.4px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  &__type-of-housing {
+    font-family: Galatea;
+    font-size: 20px;
+    font-weight: 270;
+    line-height: 27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+}

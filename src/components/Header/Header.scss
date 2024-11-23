@@ -47,20 +47,22 @@
 .header__filters-text,
 .header__contacts-text {
   white-space: nowrap;
+  font-family: Galatea;
+  font-size: 20px;
+  font-weight: 270;
+  line-height: 22px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-size: 0.9rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .header__filters-img,
 .header__contacts-img {
   width: 1.2rem;
   height: auto;
-}
-
-.header__filters-text,
-.header__contacts-text {
-  font-family: sans-serif;
-  font-size: 0.9rem;
-  margin: 0;
-  white-space: nowrap;
 }
 
 .house-group {
@@ -91,7 +93,6 @@
   .header-left {
     gap: 0.5rem;
     flex-direction: column;
-    
   }
 
   .header {
