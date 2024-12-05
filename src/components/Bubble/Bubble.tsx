@@ -1,23 +1,32 @@
-import "./Bubble.scss";
+import React from 'react';
+import './Bubble.scss';
 
-const Bubble = () => {
+interface BubbleProps {
+  heading: string;
+  data: {
+    mainText: string;
+    area: string;
+    price: string;
+  };
+  style?: React.CSSProperties; 
+}
+
+const Bubble: React.FC<BubbleProps> = ({ heading, data, style }) => {
   return (
-    <div className="bubble">
-      <div className="bubble__body">
-        <h3 className="bubble__heading">1 этаж</h3>
-        <p>
-          <span className="bubble__big-text">3</span>{" "}
-          <span className="bubble__type-of-housing">ситихауса</span>
-          <br></br>в продаже
-        </p>
-        <p>
-          <span className="bubble__big-text">от 120 м²</span>
-          <br></br>площадь
-        </p>
-        <p>
-          <span className="bubble__big-text">от 310 000 000 ₽</span>
-          <br></br>стоимость
-        </p>
+    <div className="bubble" style={style}> 
+      <div className="bubble__content"> 
+        <h3 className="bubble__heading">{heading}</h3>
+        <div className="bubble__data"> 
+          <p>
+            <span className="bubble__big-text">{data.mainText}</span>
+          </p>
+          <p>
+            <span className="bubble__big-text">{data.area}</span>
+          </p>
+          <p>
+            <span className="bubble__big-text">{data.price}</span>
+          </p>
+        </div>
       </div>
     </div>
   );

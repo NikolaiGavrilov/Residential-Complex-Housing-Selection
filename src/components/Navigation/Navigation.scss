@@ -1,40 +1,41 @@
 .navigation {
-    position: absolute;
-    left: 0px;
-    top: 29%;
-    width: 207px;
+  position: absolute;
+  left: 0px;
+  top: 29%;
+  width: 207px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  border-radius: 0 20px 20px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: transform 0.7s ease;
+  transform: translateX(0);
+
+  &__items {
     display: flex;
     flex-direction: column;
-    z-index: 5;
-    border-radius: 0 20px 20px 0;
-    background-color: #ffffff;
-    overflow: hidden;
-  
-    &__items {
-      display: flex;
-      flex-direction: column;
+  }
+
+  &__item {
+    padding: 10px 20px;
+    font-family: Galatea;
+    font-size: 15px;
+    color: #000000;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ad8361;
+      color: white;
     }
-  
-    &__item {
-      padding: 10px 20px;
-      font-family: Galatea;
-      font-size: 15px;
-      color: #000000;
-      text-align: left;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: #ad8361;
-        color: white;
-      }
-  
-      &:not(:first-child) {
-        border-bottom: 1px solid rgba(173, 131, 97, 0.15);
-      }
-  
-      &:active {
-        border: 1px solid white;
-      }
+
+    &:not(:first-child) {
+      border-bottom: 1px solid rgba(173, 131, 97, 0.15);
+    }
+
+    &:active {
+      border: 1px solid white;
     }
   }
-  
+}

@@ -26,10 +26,21 @@
     cursor: pointer;
 
     &-line {
+      transition: transform 0.3s;
       background-color: #000000;
       width: 2.7rem;
       height: 1px;
     }
+  }
+
+  .header__menu-line.cross:first-child {
+    transition: transform 0.3s;
+    transform: rotate(25deg) translate(0.3rem, 0.3rem);
+  }
+
+  .header__menu-line.cross:last-child {
+    transition: transform 0.3s;
+    transform: rotate(-25deg) translate(0.3rem, -0.3rem);
   }
 
   &__filters,

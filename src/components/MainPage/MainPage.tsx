@@ -5,7 +5,6 @@ import "./MainPage.scss";
 import { setTitle } from "../../redux/headerTitleReducer";
 import Navigation from "../Navigation/Navigation";
 import NavigationHighlights from "../NavigationHighlights/NavigationHighlights";
-import Bubble from "../Bubble/Bubble";
 import HoverHighlights from "../HoverHighlights/HoverHighlights";
 
 const MainPage = () => {
@@ -13,6 +12,7 @@ const MainPage = () => {
   const [showNavigationHighlightBuilding, setShowNavigationHighlightBuilding] =
     useState(false);
   const [selectedTitle, setSelectedTitle] = useState<string>("Пентхаусы");
+  const [isNavVisible, setNavVisible] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -30,11 +30,18 @@ const MainPage = () => {
     }, 3000);
   };
 
+  const toggleNavigationVisibility = () => {
+    setNavVisible((prev) => !prev);
+  };
+
   return (
     <>
-      <Header />
+      <Header onMenuClick={toggleNavigationVisibility} />
       <section className="main-page">
-        <Navigation onNavigationClick={handleNavigationClick} />
+          <Navigation
+            onNavigationClick={handleNavigationClick}
+            isNavVisible={isNavVisible}
+          />
         <div className={`img-box_view${buildingView}`}>
           <img
             className={`building-img-back_view${buildingView}`}
@@ -47,13 +54,12 @@ const MainPage = () => {
             src={`building_view${buildingView}.svg`}
             alt={`здание вид${buildingView}`}
           />
-          <Bubble />
           <NavigationHighlights
             showNavigationHighlightBuilding={showNavigationHighlightBuilding}
             selectedTitle={selectedTitle}
             buildingView={buildingView}
           />
-          <HoverHighlights buildingView={buildingView}/>
+          <HoverHighlights buildingView={buildingView} />
           <div className={`compass_view${buildingView}`}>
             <img src={`compass_view${buildingView}.svg`} alt="" />
           </div>

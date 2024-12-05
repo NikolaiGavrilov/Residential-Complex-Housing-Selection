@@ -1,9 +1,7 @@
 .bubble {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 10;
-  left: 0;
-  top: 0;
   max-width: 275px;
   height: 326px;
   background-color: white;

@@ -1,18 +1,34 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import './Header.scss';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import "./Header.scss";
 
-interface HeaderProps {} 
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = () => {
-  const title = useSelector((state: RootState) => state.headerTitle.headerTitle); 
+interface HeaderProps {
+  onMenuClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
+  const title = useSelector(
+    (state: RootState) => state.headerTitle.headerTitle
+  );
+  const [isNavOpen, setNavOpen] = useState(true);
+  const handleMenuClick = () => {
+    setNavOpen(!isNavOpen);
+    onMenuClick();
+  };
+
   return (
     <header className="header">
       <div className="header-content">
-        <div className="header__menu">
-          <div className="header__menu-line"></div>
-          <div className="header__menu-line"></div>
+        <div className="header__menu" onClick={handleMenuClick}>
+          <div
+            className={`header__menu-line ${!isNavOpen ? "cross" : ""}`}
+          ></div>
+          <div
+            className={`header__menu-line ${!isNavOpen ? "cross" : ""}`}
+          ></div>
         </div>
         <div className="house-group">
           <p className="house-group__name">{title}</p>
