@@ -33,23 +33,23 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         <div className="house-group">
           <p className="house-group__name">{title}</p>
         </div>
-        <div className="header-left">
-          <div className="header__filters">
+        {/* <div className="header-left"> */}
+        {/* <div className="header__filters">
             <img
               className="header__filters-img"
               src="./filters.svg"
               alt="фильтрация"
             />
             <p className="header__filters-text">По параметрам</p>
-          </div>
-          <div className="header__contacts">
-            <img
+          </div> */}
+        <div className="header__contacts">
+          {/* <img
               className="header__contacts-img"
               src="./favorites.svg"
               alt="избранные"
-            />
-            <div className="header__contacts-text">+7 495 000 00 00</div>
-          </div>
+            /> */}
+          <div className="header__contacts-text">+7 495 000 00 00</div>
+          {/* </div> */}
         </div>
       </div>
     </header>

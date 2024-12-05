@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Сайт ЖК для продажи недвижимости (главная страница)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Информация о проекте
 
-Currently, two official plugins are available:
+Мой проект - реализация главной страницы сайта жилищного комплекса. На ней
+пользователи могут узнать об имеющихся вариантах недвижимости для покупки.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<details>
+<summary>Подробнее</summary>
+Варианты недвижимости показываются на здании в наглядной
+форме, если кликнуть на интересующий пункт в навигационном меню сбоку. Также
+можно получить информацию о стоимости и метраже, наведя курсором на определенный
+участок здания. Он подсветится, и в специальном окне появится вся интересующая
+пользователей информация. 
 
-## Expanding the ESLint configuration
+![Главная страница сайта ЖК вид 1](public/readme-preview.jpg)
+Здание жилищного комплекса можно поворачивать
+(доступны Вид-1, Вид-2).
+![Главная страница сайта ЖК вид 2](public/readme-preview2.jpg)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+</details>
 
-- Configure the top-level `parserOptions` property like this:
+## Инструкции по сборке и запуску
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Склонировать себе этот репозиторий
+
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+git clone https://github.com/NikolaiGavrilov/Residential-Complex-Housing-Selection
+```
+2. Перейти в директорию
+```
+cd Residential-Complex-Housing-Selection
+```
+3. Выполнить команду ниже для установки необходимых node_modules
+```
+npm i
+```
+4. Запустить сервер разработки, выполнив в терминале команду
+```
+npm run dev
+```
+5. Перейти на сайт, кликнув по появившейся в окне терминала ссылке левой кнопкой
+   мыши с зажатой клавишей Ctrl или скопировать следующую ссылку в адресную
+   строку в браузере и самостоятельно выполнить переход.
+```
+http://localhost:5173/
 ```
