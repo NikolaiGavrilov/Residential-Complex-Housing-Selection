@@ -1,73 +1,73 @@
 .highlight {
-    &__penthouses_view1 {
-      position: absolute;
-      top: 15px;
-      left: 331px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__penthouses_view2 {
-      position: absolute;
-      top: 5px;
-      left: 210px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__flats_view1 {
-      position: absolute;
-      top: 195px;
-      left: 351px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__flats_view2 {
-      position: absolute;
-      top: 183px;
-      left: 233px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__cityhouses1_view1 {
-      position: absolute;
-      top: 420px;
-      left: 489px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__cityhouses2_view1 {
-      position: absolute;
-      top: 345px;
-      right: 333px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__cityhouses_view2 {
-      position: absolute;
-      top: 340px;
-      right: 125px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__villas_view1 {
-      position: absolute;
-      top: 233px;
-      left: 233px;
-      z-index: 3;
-      pointer-events: none;
-    }
-  
-    &__villas_view2 {
-      position: absolute;
-      top: 290px;
-      left: 50px;
-      z-index: 3;
-      pointer-events: none;
-    }
+  &__penthouses_view1 {
+    position: absolute;
+    top: 15px;
+    left: 331px;
+    z-index: 3;
+    pointer-events: none;
   }
+
+  &__penthouses_view2 {
+    position: absolute;
+    top: 5px;
+    left: 210px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__flats_view1 {
+    position: absolute;
+    top: 195px;
+    left: 351px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__flats_view2 {
+    position: absolute;
+    top: 183px;
+    left: 233px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses1_view1 {
+    position: absolute;
+    top: 420px;
+    left: 489px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses2_view1 {
+    position: absolute;
+    top: 345px;
+    left: 972px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__cityhouses_view2 {
+    position: absolute;
+    top: 340px;
+    right: 125px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__villas_view1 {
+    position: absolute;
+    top: 233px;
+    left: 233px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &__villas_view2 {
+    position: absolute;
+    top: 290px;
+    left: 50px;
+    z-index: 3;
+    pointer-events: none;
+  }
+}

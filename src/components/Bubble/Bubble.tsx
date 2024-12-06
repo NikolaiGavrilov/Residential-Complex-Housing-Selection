@@ -19,15 +19,15 @@ const Bubble: React.FC<BubbleProps> = ({ heading, data, style }) => {
         <div className="bubble__data">
           <p>
             <span className="bubble__big-text">{data.mainText}</span>
-            <br></br>в продаже
+            <br></br><span className="bubble__small-text">в продаже</span>
           </p>
           <p>
             <span className="bubble__big-text">{data.area}</span>
-            <br></br>площадь
+            <br></br><span className="bubble__small-text">площадь</span>
           </p>
           <p>
             <span className="bubble__big-text">{data.price}</span>
-            <br></br>стоимость
+            <br></br><span className="bubble__small-text">стоимость</span>
           </p>
         </div>
       </div>

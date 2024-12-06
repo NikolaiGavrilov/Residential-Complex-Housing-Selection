@@ -39,3 +39,34 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .navigation {
+    top: 15%;
+    width: 157px;
+  }
+  .navigation__item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    top: 15%;
+    width: 150px;
+  }
+  .navigation__item {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    top: 20%;
+    width: 50px;
+  }
+  .navigation__item {
+    font-size: 7px;
+    padding: 5px 10px;
+  }
+}

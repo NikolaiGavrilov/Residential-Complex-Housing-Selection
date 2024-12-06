@@ -38,41 +38,41 @@ const MainPage = () => {
     <>
       <Header onMenuClick={toggleNavigationVisibility} />
       <section className="main-page">
-          <Navigation
-            onNavigationClick={handleNavigationClick}
-            isNavVisible={isNavVisible}
-          />
-        <div className={`img-box_view${buildingView}`}>
-          <img
-            className={`building-img-back_view${buildingView}`}
-            src={buildingView === 1 ? "background.jpg" : "background2.jpg"}
-            alt="фон"
-          />
-          <div className={`cover_view${buildingView}`}></div>
-          <img
-            className={`building-img_view${buildingView}`}
-            src={`building_view${buildingView}.svg`}
-            alt={`здание вид${buildingView}`}
-          />
-          <NavigationHighlights
-            showNavigationHighlightBuilding={showNavigationHighlightBuilding}
-            selectedTitle={selectedTitle}
-            buildingView={buildingView}
-          />
-          <HoverHighlights buildingView={buildingView} />
-          <div className={`compass_view${buildingView}`}>
-            <img src={`compass_view${buildingView}.svg`} alt="" />
+        <Navigation
+          onNavigationClick={handleNavigationClick}
+          isNavVisible={isNavVisible}
+        />
+          <div className={`img-box_view${buildingView}`}>
+            <img
+              className={`building-img-back_view${buildingView}`}
+              src={buildingView === 1 ? "background.jpg" : "background2.jpg"}
+              alt="фон"
+            />
+            <div className={`cover_view${buildingView}`}></div>
+            <img
+              className={`building-img_view${buildingView}`}
+              src={`building_view${buildingView}.svg`}
+              alt={`здание вид${buildingView}`}
+            />
+            <NavigationHighlights
+              showNavigationHighlightBuilding={showNavigationHighlightBuilding}
+              selectedTitle={selectedTitle}
+              buildingView={buildingView}
+            />
+            <HoverHighlights buildingView={buildingView} />
+            <div className={`compass_view${buildingView}`}>
+              <img src={`compass_view${buildingView}.svg`} alt="" />
+            </div>
+            <div className={`surroundings_view${buildingView}`}>
+              <img src={`surroundings_view${buildingView}.svg`} alt="" />
+            </div>
+            <div
+              className={`change-view_view${buildingView}`}
+              onClick={handleChangeView}
+            >
+              <img src={`arrows_view${buildingView}.svg`} alt="" />
+            </div>
           </div>
-          <div className={`surroundings_view${buildingView}`}>
-            <img src={`surroundings_view${buildingView}.svg`} alt="" />
-          </div>
-          <div
-            className={`change-view_view${buildingView}`}
-            onClick={handleChangeView}
-          >
-            <img src={`arrows_view${buildingView}.svg`} alt="" />
-          </div>
-        </div>
       </section>
     </>
   );
