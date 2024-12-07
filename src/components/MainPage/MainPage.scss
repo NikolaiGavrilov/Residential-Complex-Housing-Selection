@@ -162,7 +162,23 @@
 
   .img-box_view2 {
     transform: scale(0.6);
-    transform-origin: 40% 0px;
+    transform-origin: 44% 0px;
+  }
+
+  .cover_view1 {
+    display: none;
+  }
+
+  .building-img-back_view1 {
+    display: none;
+  }
+
+  .cover_view2 {
+    display: none;
+  }
+
+  .building-img-back_view2 {
+    display: none;
   }
 }
 
@@ -181,11 +197,11 @@
 @media (max-width: 425px) {
   .img-box_view1 {
     transform: scale(0.24);
-    transform-origin: 6% 0px;
+    transform-origin: 16% 0px;
   }
 
   .img-box_view2 {
     transform: scale(0.24);
-    transform-origin: 12% 0px;
+    transform-origin: 30% 0px;
   }
 }
